@@ -1,0 +1,15 @@
+# Makefile
+
+CC = gcc
+CFLAGS = -Wall -pthread
+
+all: server client
+
+server: server.c shop.h
+$(CC) $(CFLAGS) server.c -o server
+
+client: client.c shop.h
+$(CC) $(CFLAGS) client.c -o client
+
+clean:
+rm -f server client
